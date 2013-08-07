@@ -1,0 +1,32 @@
+<apex:page controller="addRemoveUsers">
+    <apex:form >
+	    <apex:selectList size="1">
+			<apex:selectOptions value="{!groupsList}"/>
+	   	</apex:selectList>
+    <apex:panelGrid columns="3" id="pgid">
+    	<apex:panelGroup >
+	    	
+	    	<br/><br/><br/>
+		    <apex:selectList multiselect="true" value="{!firstPick}" style="width:100px;Height:150px;">
+		    <apex:selectOptions value="{!optionList}"/>
+		    </apex:selectList>
+        </apex:panelGroup>
+	    <apex:panelGroup >
+	    	<br/><br/><br/>
+			<apex:image value="{!$Resource.leftArrow}" >
+			<apex:actionSupport event="onclick" action="{!selectclick}"  reRender="pgid"/>
+			</apex:image>
+			<br/><br/><br/><br/><br/><br/><br/>
+			<apex:image value="{!$Resource.RightArrow}" >
+			<apex:actionSupport event="onclick" action="{!removeclick}" reRender="pgid"/>
+			</apex:image>
+	    </apex:panelGroup>
+	    <apex:panelGroup >
+			<br/><br/><br/>
+	        <apex:selectList multiselect="true" size="8" style="width:100px;Height:150px;" value="{!secondPick}">  
+	        	<apex:selectOptions value="{!userPickList1}" /> 
+	        </apex:selectList>
+        </apex:panelGroup>
+    </apex:panelGrid>
+    </apex:form> 
+</apex:page>

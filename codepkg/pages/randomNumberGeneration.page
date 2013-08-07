@@ -1,0 +1,30 @@
+<apex:page controller="randomNumberGeneration" standardStylesheets="false">
+<style>
+td#big
+{
+padding:9px;
+font-size:30px;
+}
+</style>
+        <apex:form >
+        <table border="1" style = "width:200px;height:200px;align:center">
+                <tr  >
+                        <td id = "big">{!firstValue}</td>  
+                        <td id = "big">{!SecondValue}</td>
+                        <td id = "big">{!thirdValue}</td>
+                </tr>
+                <tr>
+                        <td id = "big">{!fourthValue}</td>
+                        <td id = "big">{!fifthValue}</td>
+                        <td id = "big">{!sixthValue}</td>
+                </tr>
+                <tr>
+                        <td id = "big">{!seventhValue}</td>
+                        <td id = "big">{!eighthValue}</td>
+                        <td id = "big">{!ninethValue}</td>
+                </tr>
+        </table>
+                    
+                <apex:commandButton Value="Generate Numbers" action="{!genFunc}"/>
+        </apex:form>
+</apex:page>

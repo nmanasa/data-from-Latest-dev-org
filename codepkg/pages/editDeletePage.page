@@ -1,0 +1,29 @@
+<apex:page controller="editDeleteClass" sidebar="false">
+    <apex:form >
+        <apex:pageBlock >
+            
+                <apex:pageBlockTable value="{!WrapperMethod}" var="wm"  style="width:100%" id="pageBlockid"> 
+                    <apex:column >                  
+                         <apex:commandButton value="Edit"  id="editButton" action="{!editFunction}" rendered="{!!wm.boolWrapVar}" rerender="pageBlockid" >
+                          <apex:param name="e" value="{!wm.itemWrapVar.id}" assignTo="{!editId}"/>  
+                         </apex:commandButton>
+                 <!--       <apex:commandbutton value="Delete"  action="{!DeleteFunction}"  id="deleteButton"  rendered="{!!wm.boolWrapVar}">  --> 
+                        <apex:commandbutton value="Delete"  action="{!DeleteFunction}"  id="deleteButton" rendered="{!!wm.boolWrapVar}" rerender="pageBlockid">
+                            <apex:param name="p" value="{!wm.itemWrapVar.id}" assignTo="{!retreiveId}"/>
+                        </apex:commandbutton>
+                        
+                  <!--       <apex:commandButton value="Save" id="saveButton"  rendered="{!wm.boolWrapVar}" action = "{!saveRecord}"/>  -->
+                        <apex:commandButton value="Save" id="saveButton"  rendered="{!wm.boolWrapVar}" />
+                        <apex:commandButton value="Cancel"  id="cancelButton" rendered="{!wm.boolWrapVar}"/>
+                       
+                    </apex:column>
+                    <apex:column value="{!wm.itemWrapVar.id}"/>
+                    <apex:column value="{!wm.itemWrapVar.Name}"/>  
+                    <apex:column value="{!wm.itemWrapVar.Amount__c}"/> 
+                    <apex:column value="{!wm.itemWrapVar.Cost_of_the_Item__c}"/>  
+                    <apex:inlineEditSupport disabled="{!!wm.boolWrapVar"/>
+                </apex:pageBlockTable>
+           
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

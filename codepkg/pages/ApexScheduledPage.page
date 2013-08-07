@@ -1,0 +1,5 @@
+<apex:page controller="ApexScheduledClass">
+<apex:form >
+<apex:commandbutton value="Send Email" action="{!TimeMethod}"/>
+</apex:form> 
+</apex:page>

@@ -1,0 +1,13 @@
+<apex:page controller="UserloginClass" sidebar="false" standardStylesheets="false">
+  <apex:form >
+  	<apex:pageBlock >
+  	<apex:pageMessages />
+  		<apex:pageBlockSection >
+  			<apex:inputText label="Username" value="{!username}"/><br/><br/>
+     		<apex:inputText label="password"  value="{!password}"/><br/>
+  		</apex:pageBlockSection>
+  	</apex:pageBlock>
+  	 <apex:commandButton value="Login" action="{!checkFunc}"/>
+     <apex:outputLink value="/apex/UserRegistration">Register</apex:outputLink> 
+  </apex:form>
+</apex:page>

@@ -1,0 +1,17 @@
+<apex:page controller="captchaChar" > 
+<script>
+	var captchaText = 
+</script>
+	<apex:form >
+	  <apex:pageBlock >
+	      <apex:pageBlockSection >
+	        
+	          <p>Char String</p>
+	              <apex:outputText value="{!displayValue}" style="font-size:25px;text-align:center;color:blue;font-weight:bold;"></apex:outputText> 
+	              <apex:inputText id="in"/>
+	              <apex:commandButton Value="Refresh" action="{!refreshValues}"/>
+	       
+	      </apex:pageBlockSection>
+	  </apex:pageBlock>
+	 </apex:form>
+</apex:page>

@@ -1,0 +1,49 @@
+<apex:page Controller="captch_AC" id="pg">
+	<script>
+		function submitit()
+		{
+			if(document.getElementById('pg:fm:pb:pbs:ipt').value == document.getElementById('pg:fm:pb:pbs:lbl').value)
+			{
+				submited();
+				alert('welcome');
+			}
+			else
+			{
+				alert('wrong entry!!! please retry');
+				document.getElementById('pg:fm:pb:pbs:ipt').value = '';
+			}
+		}
+	</script>
+	<style type="text/css">
+	
+	input.groovybutton
+	{
+	   font-size:25px;
+	   font-family:Zreaks NFI;
+	   font-weight:bold;
+	   font-style:italic;
+	   width:120px;
+	   height:60px;
+	   background:white;
+	   border-style:none;
+	}
+	
+	</style>
+	
+
+
+	<apex:form id="fm">
+		<apex:actionFunction action="{!submit}" name="submited"  />
+		<apex:pageBlock id="pb">
+			<apex:pageBlockSection columns="1" id="pbs">
+				<apex:commandButton value="{!captcha}" id="lbl" style="color:red;" styleClass="groovybutton"  disabled="true"/>
+				<apex:inputText id="ipt" />
+			</apex:pageBlockSection>
+			&nbsp; &nbsp;
+			<apex:commandButton action="{!refresh}" value="refresh" title="Change The Text" rerender="pbs">
+			</apex:commandButton>
+			&nbsp; &nbsp; &nbsp;
+			<apex:commandButton onclick="submitit();" value="Submit" title="Go to Accounts" />
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

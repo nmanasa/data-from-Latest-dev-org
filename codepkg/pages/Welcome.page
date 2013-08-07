@@ -1,0 +1,16 @@
+<apex:page controller="Welcome">
+  <apex:form >
+      <apex:pageBlock >
+          <apex:pageBlockSection >
+          <apex:pageBlockSectionItem >
+          First Name
+               <apex:outputPanel styleClass="requiredInput" layout="block">  
+               <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+              <apex:inputtext label="FirstName" value="{!firstname}"  />
+              </apex:outputPanel>
+              </apex:pageBlockSectionItem>
+              <apex:commandButton value="Save" action="{!save}"/>
+          </apex:pageBlockSection>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

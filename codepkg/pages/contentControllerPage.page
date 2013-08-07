@@ -1,0 +1,7 @@
+<apex:page controller="contentController">
+<apex:form >
+<apex:inputFile value="{!file}" />
+
+<apex:commandbutton action="{!go}" value="go"/>
+</apex:form>
+</apex:page>

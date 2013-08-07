@@ -1,0 +1,104 @@
+<apex:page controller="wordController" contentType="application/msWord#Generated Document" > <!-- contentType="application/msWord#Generated Document" -->
+<html>
+<style>
+    td
+    {
+        color: #D16587;
+        font-size:15px;
+        font-family:Arial, Helvetica, sans-serif;
+        margin-left:0.5cm;
+        
+      
+    }
+    table,tr,td
+    {
+        border:1px solid; black;
+        border-collapse: collapse;
+    }
+   
+</style>
+    <apex:form >
+        <apex:pageBlock >
+    <!--    <apex:image url="/servlet/servlet.FileDownload—file=01590000001MvrJ" width="256" height="256"/> -->
+    <!--     <apex:image url="{!$Resource.Logo}" width="50" height="50" style="text-align: center"/>  -->
+    <!--    <apex:image url="{!imageURL}">
+    </apex:image> -->
+    <apex:image url="C:\Users\Dell\Desktop\logo.png" width="50" height="50"/>
+        
+         <p style = "color:#D16587;text-align: center;font-size:40px;"> Project Record Information </p>
+            <table >
+                <tr>
+                    <td>First Name </td>
+                    <td>{!fname}</td>
+                </tr>
+                <tr>
+                    <td>Last Name  </td>
+                    <td> {!lname}</td>
+                </tr>
+                <tr>
+                    <td>Record Number  </td>
+                    <td> {!rnum}</td>
+                </tr>
+            </table>
+            
+            <br/><br/><br/>
+            
+                <table border = "1" width="75%" style = "">
+                    
+                     <tr>
+                       
+                        <td> Company Name :
+                         {!result.Company_Name__c}
+                         </td>
+                         <td>
+                         Document Number :
+                         {!incrementValue}
+                         </td>
+                    </tr>
+                    
+                     <tr>
+                          <td> CITY 
+                        {!result.City__c}                       
+                        </td>
+                        <td>
+                            STATE: 
+                             {!result.State__c}
+                        </td>                        
+                    </tr>                                                                         
+                                     
+                    <tr>
+                        <td colspan = "2">
+                            Description:  
+                             {!result.Description__c}
+                        </td> 
+                    </tr>
+                     <tr>
+                        <td colspan = "2" >
+                            PIN:  
+                             {!result.Pin__c}
+                        </td>
+                    </tr>
+                </table>
+           
+         <!--   <apex:pageBlockSection columns="1"  >
+                    <apex:inputText label="FirstName"  value="{!fname}"/>
+                    <apex:inputText label="Last Name" value="{!lname}"/>
+                    <apex:inputText label="Record Number" value="{!rnum}" />
+            </apex:pageBlockSection>
+            <apex:commandButton value="Generate Document"  action="{!requirdFieldsVerification}" /> -->
+    <!--       <apex:pageBlockTable value="{!result}" var="result" >
+                <apex:column value="{!result.City__c}" />
+                <apex:column value="{!result.Company_Name__c}" />
+                <apex:column value="{!result.Description__c}" />
+                <apex:column value="{!result.Pin__c}" />
+                <apex:column value="{!result.State__c}" />
+                <apex:column > 
+            
+                 <apex:outputLabel value="{!incrementValue}"/>
+                </apex:column>
+            </apex:pageBlockTable> -->
+           
+        </apex:pageBlock>
+    </apex:form>
+</html>
+</apex:page>

@@ -1,0 +1,6 @@
+<apex:page standardcontroller="Account" recordsetvar="Accounts" cache="true" contentType="text/plain/#test.csv">
+Name,Owner id, Account number, Phone
+<apex:repeat value="{!Accounts}" var="acc">
+{!acc.name},{!acc.owner},{!acc.AccountNumber},{!acc.Phone}
+</apex:repeat>
+</apex:page>

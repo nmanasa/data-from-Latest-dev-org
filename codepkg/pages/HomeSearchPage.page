@@ -1,0 +1,43 @@
+<apex:page StandardStyleSheets="false" sidebar="false" controller="serachLeadAccountController">
+<apex:includeScript value="/support/console/23.0/integration.js"/>
+<script>
+	window.onload = sforce.console.setTabTitle("Search Page");
+/*	window.onload = init;
+	function init(){
+            sforce.console.setTabTitle("Search Page");
+             
+        }  */
+	function clearAll()
+	{
+		document.getElementById("{!$Component.formId.pbId.pbsId.firstnameId}").value = '';
+		document.getElementById("{!$Component.formId.pbId.pbsId.secondnameId}").value = '';
+		document.getElementById("{!$Component.formId.pbId.pbsId.emailId}").value = '';
+		document.getElementById("{!$Component.formId.pbId.pbsId.phoneId}").value = '';
+	}
+</script>
+<apex:form id="formId">
+	<apex:pageBlock id="pbId">
+	<apex:pageMessages / >
+		<apex:pageBlockSection columns="1" id="pbsId">
+			<apex:inputText label="FirstName" value="{!firstName}" id="firstnameId"/>
+			<apex:inputText label="LastName" value="{!lastName}" id="secondnameId"/>
+			<apex:inputText label="Email" value="{!email}" id="emailId"/>
+			<apex:inputText label="Phone" value="{!phone}" id="phoneId"/>
+		</apex:pageBlockSection>
+	</apex:pageBlock> 
+	<apex:commandButton value="Search" action="{!searchFunction}"/>
+	<apex:commandButton value="reset" onClick="clearAll();"/>
+	<apex:commandButton value="Create Lead" rendered="{!createLead}" action="{!creatingLead}"/>
+	<apex:pageBlock rendered="{!showList}">
+		<apex:pageBlockSection >
+			<apex:pageBlockTable value="{!leadList}" var="tlist" >
+				<apex:column value="{!tlist.firstName}"/>
+				<apex:column value="{!tlist.LastName}"/>
+				<apex:column value="{!tlist.phone}"/>
+				<apex:column value="{!tlist.email}"/>
+				<apex:column value="{!tlist.status}"/>
+			</apex:pageBlockTable>
+		</apex:pageBlockSection>
+	</apex:pageBlock>
+	</apex:form>
+</apex:page>

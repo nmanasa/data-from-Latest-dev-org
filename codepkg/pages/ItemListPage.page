@@ -1,0 +1,22 @@
+<apex:page controller="itemsListClass" >
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageblockSection >
+            <apex:pageBlockTable value="{!itemsDisplay}" var="itemvar">
+            
+           <!--      <apex:column >
+                                        <a href="javascript:srcUp('/{!itemvar.Id}');">{!itemvar.Name}</a>
+                                        <apex:facet name="header">Item Name</apex:facet>
+                                  </apex:column> -->
+               <apex:column >
+               <apex:commandLink value="{!itemvar.Name}" action="/{!itemvar.id}" target="_blank"></apex:commandLink>
+               </apex:column>
+                   
+                <apex:column value="{!itemvar.Number_of_items__c}"/>
+                <apex:column value="{!itemvar.Amount__c}"/>
+                <apex:column value="{!itemvar.Order__c}"/>
+            </apex:pageBlockTable>
+        </apex:pageblockSection>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

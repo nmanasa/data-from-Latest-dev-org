@@ -1,0 +1,9 @@
+<apex:page standardController="Account" extensions="repeatClass">
+
+    <apex:repeat value="{!accountFunc}" var="acc">
+
+        <apex:outputText value="{!acc.name}"/><br/>
+
+    </apex:repeat> 
+
+</apex:page>

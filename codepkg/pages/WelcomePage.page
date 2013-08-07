@@ -1,0 +1,6 @@
+<apex:page sidebar="False" standardStyleSheets="false">
+<!-- Begin Default Content REMOVE THIS -->
+<h1>Congratulations and Welcome</h1>
+
+<!-- End Default Content REMOVE THIS -->
+</apex:page>

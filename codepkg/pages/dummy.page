@@ -1,0 +1,34 @@
+<apex:page controller="dummy">
+	<apex:form >
+		<apex:pageBlock >
+			<apex:pageBlockSection >
+				<apex:commandlink value="Add File" action="{!flag1Status}" />
+			</apex:pageBlockSection>
+			 	
+				
+				<apex:pageBlocksection rendered="{!flag1}">
+				<apex:inputFile value="{!file1Content}" fileName="{!file1}" />
+				<apex:commandLink value="Add another File" action="{!flag2Status}" />
+			</apex:pageBlocksection>
+			
+			
+			
+			<apex:pageBlocksection rendered="{!flag2}" id="PB2">
+			
+				<apex:inputFile value="{!file2Content}" fileName="{!file2}" />
+				<apex:commandLink value="Add another File" action="{!flag3Status}"/>
+				
+			</apex:pageBlocksection>
+			
+			
+			
+			<apex:pageBlocksection rendered="{!flag3}" id="PB3">
+				<apex:inputFile value="{!file3Content}" fileName="{!file3}" /> 				
+			</apex:pageBlocksection> 
+			
+			
+			<apex:commandButton value="Upload" action="{!uploadFunction}"/>
+			
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

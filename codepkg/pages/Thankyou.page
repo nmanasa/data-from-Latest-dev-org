@@ -1,0 +1,5 @@
+<apex:page sidebar="false" standardstylesheets="false" >
+
+<h1>Thank you for registring with us!!</h1>
+
+</apex:page>

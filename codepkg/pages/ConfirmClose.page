@@ -1,0 +1,28 @@
+<apex:page standardController="Case" extensions="ConfirmClose">
+	<apex:form >
+		<apex:pageBlock mode="edit">
+		<apex:pageBlockTable value="{!PQList}" var="pq">
+			<apex:column value="{!pq.CaseNumber}"/>
+			<apex:column value="{!pq.Subject}"/>
+			<apex:column value="{!pq.Type}"/>
+			<apex:column >
+			<apex:inputField value="{!pq.status}"/>
+			</apex:column>
+			<apex:column >
+				<apex:inputField value="{!pq.Notes__c}"/>
+			</apex:column>
+			<apex:column >
+				<apex:inputField value="{!pq.Next_Call_Time__c}"/>
+			</apex:column>			
+			
+		</apex:pageBlockTable>
+	<!-- 	<apex:inputField value="{!case.CaseNumber}"/>
+		<apex:inputField value="{!case.Subject}"/>
+		<apex:inputField value="{!case.Status}"/>  -->
+		<!-- 	<apex:pageBlockTable value="" var="">
+				<apex:column value=""/ >
+			</apex:pageBlockTable>  -->
+			<apex:commandButton action="{!saveRecord}" value="Save"/>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

@@ -1,0 +1,25 @@
+<apex:page controller="UserRegistrationClass" sidebar="false" standardStyleSheets="false">
+
+ <apex:form >
+<apex:pageBlock >
+<apex:pageMessages />
+<apex:pageBlockSection columns="1">
+       <apex:inputText label="UserName" value="{!username}"/>
+       <apex:inputText label="Password" value="{!Password}"/>
+       <apex:inputText label="First Name" value="{!firstname}"/>
+       <apex:inputText label="Last Name" value="{!lastname}"/>
+       <apex:inputText label="Email" value="{!email}"/>
+      
+       <apex:pageBlockSection columns="2" >
+        <apex:inputText label="Type the code" id="in" value="{!captchaVar}"/>
+        <apex:pageBlockSectionItem >
+		   <apex:outputText value="{!displayValue}" style="font-size:25px;text-align:center;color:blue;font-weight:bold;"></apex:outputText> 
+		   <apex:commandButton Value="Refresh" action="{!refreshValues}" />
+		</apex:pageBlockSectionItem>
+	   </apex:pageBlockSection>
+       <apex:commandButton value="Submit" action="{!save}" />
+   
+    </apex:pageBlockSection>
+    </apex:pageBlock>
+     </apex:form>
+</apex:page>

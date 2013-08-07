@@ -1,0 +1,9 @@
+<apex:page standardController="Contact" contentType="application/vnd.ms-excel" extensions="AccountxlClass">
+    <apex:pageBlock title="Contacts">
+        <apex:pageBlockTable value="{!Contact}" var="contact">
+            <apex:column value="{!contact.Name}"/>
+            <apex:column value="{!contact.MailingCity}"/>
+            <apex:column value="{!contact.Phone}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

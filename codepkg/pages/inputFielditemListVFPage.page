@@ -1,0 +1,13 @@
+<apex:page standardController="Items__c">
+    <apex:form >
+        <apex:pageBlock mode="edit">
+            <apex:pageBlockSection >
+                <apex:inputField value="{!Items__c.Name}"/>
+                <apex:inputField value="{!Items__c.Number_of_items__c}"/>
+                <apex:inputField value="{!Items__c.Cost_of_the_Item__c}"/>
+                <apex:inputField value="{!Items__c.Order__c}"/>
+                <apex:commandButton value="Save" action="{!save}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

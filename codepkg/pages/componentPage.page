@@ -1,0 +1,5 @@
+<apex:page sidebar="false" standardStylesheets="false">
+
+    <c:component1 myValue="My component's value" borderColor="red" />
+
+</apex:page>

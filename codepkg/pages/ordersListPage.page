@@ -1,0 +1,21 @@
+<apex:page controller="ordersListClass" >
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageblockSection >
+            <apex:pageBlockTable value="{!itemsDisplay}" var="itemvar">
+                  <apex:column headerValue="Item Name"><apex:commandLink value="{!itemvar.Name}" action="{!ChildsDisplay}" >
+                  <apex:param name="manasa" value="{!itemvar.id}" assignTo="{!retreiveId}"/></apex:commandlink>
+                   </apex:column>                    
+                <apex:column value="{!itemvar.Date_of_Order__c}"/>
+                <apex:column value="{!itemvar.Total_Bill__c}"/>
+            </apex:pageBlockTable>
+            <apex:outputPanel rendered="false">
+             <apex:pageBlockTable value="{!sublistobj}" var="cd">
+                 <apex:column headerValue="Name" value="{!cd.Name}"/>    
+                 <apex:column headerValue="Cost" value="{!cd.Cost_of_the_Item__c}"/>             
+             </apex:pageBlockTable>    
+             </apex:outputPanel>          
+        </apex:pageblockSection>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

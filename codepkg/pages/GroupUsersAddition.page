@@ -1,0 +1,25 @@
+<apex:page controller="GroupUsersAddition">
+    <apex:form id="formId">
+        <apex:actionFunction name="testFunc" action="{!testFunc}" reRender="formId"/>
+        <apex:actionFunction name="leftButtonFunc" action="{!leftButtonFunc}"/>
+        <apex:actionFunction name="rightButtonFunc" action="{!rightButtonFunc}"/>
+        <apex:selectList size="1"  value="{!selectedGroup}" onchange="testFunc()" > 
+            <apex:selectOptions value="{!groupListString}"/>
+        </apex:selectList>  
+        
+        <apex:panelGrid columns="3">
+            <apex:selectList multiselect="true"  style="width:100px;Height:150px;">
+            <apex:selectOptions value="{!listValues}"/> 
+        </apex:selectList>
+        <apex:panelGroup >
+            <apex:image value="{!$Resource.leftArrow}" onclick="leftButtonFunc()"/><br/><br/><br/>
+            <apex:image value="{!$Resource.RightArrow}" onclick="rightButtonFunc()"/>
+        </apex:panelGroup>
+            <apex:selectList multiselect="true" style="width:100px;Height:150px;" >
+                <apex:selectOptions value="{!secondPickList}" />
+            </apex:selectList>
+        </apex:panelGrid>
+        <apex:commandButton value="Add to Group" style="width:85px"/>
+        <apex:commandButton value="Remove " style="width:85px"/>
+    </apex:form>
+</apex:page>

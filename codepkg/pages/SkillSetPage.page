@@ -1,0 +1,14 @@
+<apex:page controller="SkillSetClass">
+	<apex:form >
+		<apex:pageBlock >
+			<apex:pageBlockTable value="{!TableDisplay}" var="td">
+				<apex:column value="{!td.Employee__c}"/>
+				<apex:column value="{!td.Date__c}"/>
+				<apex:column value="{!td.C__c}"/>
+				<apex:column value="{!td.Salesforce__c}"/>
+				<apex:column value="{!td.Presentation_Skills__c}"/>
+				<apex:column value="{!td.Communication_Skills__c}"/>
+			</apex:pageBlockTable>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

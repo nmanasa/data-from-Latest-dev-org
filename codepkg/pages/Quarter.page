@@ -1,0 +1,9 @@
+<apex:page controller="Quarters">
+	<apex:form >
+		<apex:inputText value="{!dateVar}" id="opendateid" onfocus="DatePicker.pickDate(true,'{!$Component.opendateid}',false);"/>
+		<apex:commandButton value="Check" action="{!checkFunc}"/>	
+		<apex:selectList >
+			<apex:selectOptions value="{!QuarterVar}" />
+		</apex:selectList>	
+	</apex:form>
+</apex:page>

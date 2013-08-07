@@ -1,0 +1,14 @@
+<apex:page controller="checkboxClass">
+	<apex:form >
+		<apex:pageBlock >
+			<apex:actionFunction name="checkFunc" reRender="slist"/>
+			<apex:inputCheckbox value="{!checkboxStatus}" onclick="checkFunc()"/>
+			<apex:outputPanel id="slist">
+			<apex:selectList rendered="{!checkboxStatus}" >			
+				<apex:selectOption itemLabel="One" itemValue="one" />
+				<apex:selectOption itemLabel="Two" itemValue="two" /> 
+			</apex:selectList>
+			</apex:outputPanel>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

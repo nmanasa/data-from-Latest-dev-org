@@ -1,0 +1,21 @@
+<apex:page controller="searching">
+    <apex:form >
+      <apex:pageBlock >
+          <apex:pageBlockSection columns="3">
+              <apex:inputText label="FirstName" value="{!fname}">
+                  <apex:actionSupport event="onmouseout"  action="{!searchfunction}" rerender="selectedPBS"/>
+              </apex:inputText>
+              <apex:inputText label="LastName" value="{!lname}"/>
+           <!--   <apex:commandButton value="Go" action="{!searchfunction}" /> -->
+          </apex:pageBlockSection>
+          <apex:pageBlockSection title="Required Records" id="selectedPBS">
+              <apex:pageBlockTable value="{!userList}" var="ul">
+                  <apex:column value="{!ul.First_Name__c}" />
+                  <apex:column value="{!ul.Last_Name__c}" />
+                  <apex:column value="{!ul.Em_ail__c}" />   
+              </apex:pageBlockTable>
+              
+          </apex:pageBlockSection>
+      </apex:pageBlock>
+    </apex:form>
+</apex:page>

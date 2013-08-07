@@ -1,0 +1,31 @@
+<apex:page controller="ActionFunction_AC" >
+	<script language = "javascript">
+	function confirmAction(){
+	showControllerState();
+	}
+	</script>
+	<apex:form >
+	<apex:pageBlock >
+	<p><b>Action Function Example</b></p><br />
+		<apex:pageBlockSection >
+			<apex:inputText value="{!accountName}"/>
+			<apex:actionFunction action="{!methodOne}" name="showControllerState"/>
+			<apex:commandButton onClick="confirmAction();" value="Search" rerender="results"/>
+		</apex:pageBlockSection>
+		<apex:outputPanel id="results" rendered="{!isEmpty}">
+		<apex:pageBlocksection >
+			<apex:pageblockTable value="{!accList}" var="accountlist">
+				<apex:column >
+				<apex:facet name="header">id</apex:facet>
+				<apex:outputlabel value="{!accountList.Id}"/>
+				</apex:column>
+				<apex:column >
+				<apex:facet name="header">Name</apex:facet>
+				<apex:outputlabel value="{!accountList.Name}"/>
+				</apex:column>
+			</apex:pageblockTable>
+		</apex:pageBlocksection>
+	</apex:outputPanel>
+	</apex:pageBlock>
+	</apex:form>
+</apex:page>

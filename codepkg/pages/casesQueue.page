@@ -1,0 +1,28 @@
+<apex:page controller="QueueAssignment">
+<apex:form >
+	<apex:pageBlock >
+		<apex:pageBlockSection title="Cases assigned to Praveen queue">
+			<apex:pageBlockTable value="{!PQList}" var="pq">
+				<apex:column >
+				<apex:outputLink value="/{!pq.id}">
+					"{!pq.CaseNumber}"
+				</apex:outputLink>
+				</apex:column>
+			<!-- 	<apex:column value="{!pq.Id}" >	</apex:column>  -->
+				<apex:column value="{!pq.Subject}"/>
+				<apex:column value="{!pq.Type}"/>
+				<apex:column value="{!pq.Accountid}"/>
+			</apex:pageBlockTable>
+		</apex:pageBlockSection>
+		<apex:pageBlockSection title="Cases Assigned to Manasa Queue">
+			<apex:pageBlockTable value="{!manQueue}" var="mq">
+				<apex:column value="{!mq.id}"/>
+				<apex:column value="{!mq.Subject}"/>
+				<apex:column value="{!mq.Type}"/>
+				<apex:column value="{!mq.Accountid}"/>
+			</apex:pageBlockTable>
+		</apex:pageBlockSection>
+		
+	</apex:pageBlock>
+	</apex:form>
+</apex:page>

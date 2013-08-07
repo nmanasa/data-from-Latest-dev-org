@@ -1,0 +1,17 @@
+<apex:page controller="wordController"   > <!-- contentType="application/msWord#Generated Document" -->
+<html>
+    <apex:form >
+    <apex:pageMessages />
+        <apex:pageBlock >
+       
+            <apex:pageBlockSection columns="1"  >
+                <apex:inputText label="FirstName"  value="{!fname}" required="true"/>
+                <apex:inputText label="Last Name" value="{!lname}" required="true"/>
+                <apex:inputText label="Record Number" value="{!rnum}" required="true"/>
+            </apex:pageBlockSection>
+            <apex:commandButton value="Generate Document"  action="{!requirdFieldsVerification}" />
+      
+        </apex:pageBlock>
+    </apex:form>
+    </html>
+</apex:page>

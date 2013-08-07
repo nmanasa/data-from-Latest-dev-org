@@ -1,0 +1,73 @@
+<apex:page cache="true" controller="itemsListClass"  contentType="application/msword"> <!-- standardController="Trip__c"  contentType="application/msword"-->
+<html>
+<head>
+  <style type="text/css">
+    @page {
+        size:landscape;
+        }
+    body {
+        font-family: Calibri;
+        font-size:13px;          
+        }
+    h1 {
+        font-family: Calibri;
+        font-weight:bold; 
+        font-size:16px;
+        text-decoration: underline;
+        }
+    tablehead {
+        font-family: Calibri;
+        font-weight:bold; 
+        font-size:14px; 
+        color:black
+        border:solid 1px;
+        }    
+    tabledata { 
+        font-family: Calibri;
+        font-size:12px; 
+        border:solid 1px;
+        }            
+  <!--  .checkbox {
+        width: 50px;
+        height: 50px;
+        background-image:url({!URLFOR($Resource.checkbox)});
+        background-repeat: no-repeat;
+      }     -->
+   </style>           
+</head> 
+<body>
+<br></br>
+    <H1>BOOKING DETAILS</H1>
+    <br></br> 
+    <p></p> 
+    <apex:PageBlock >
+         <apex:dataTable value="{!itemsDisplay}" var="itemvar" id="BookingTable" headerClass="tablehead" columnClasses="tabledata">
+              <apex:column >
+                                        <a href="javascript:srcUp('/{!itemvar.Id}');">{!itemvar.Name}</a>
+                                        <apex:facet name="header">Item Name</apex:facet>
+                                  </apex:column>
+                 <th/>   <th/>   <th/>   <th/>   <th/>   <th/>   <th/>  
+                <apex:column value="{!itemvar.Number_of_items__c}" headerValue="Number of Items"/>
+                <apex:column value="{!itemvar.Amount__c}" headerValue="Amount"/>
+                <apex:column value="{!itemvar.Order__c}" headerValue="Order"/>
+     </apex:dataTable>
+    </apex:pageBlock>  
+    
+ <!--   <apex:dataTable value="{!Trip__c.Travellers__r}" var="B" id="BookingTable" headerClass="tablehead" columnClasses="tabledata">   
+                <apex:column value="{!B.Booking__r.Name}" headerValue="Ref"/>
+                <apex:column value="{!B.Traveller__r.Name}" headerValue="Traveller"/>
+                <apex:column value="{!B.Traveller__r.Age__c}" headerValue="Age"/>                
+                <apex:column value="{!B.Traveller__r.Previous_Client__c}" headerValue="Previous Client" style="checkbox"/>
+                <apex:column value="{!B.Traveller__r.Dietary_Requirements__c}" headerValue="Diet"/>
+                <apex:column value="{!B.Traveller__r.Medical_Conditions__c}" headerValue="Medical"/>
+                <apex:column value="{!B.Traveller__r.Chest_Size__c}" headerValue="Chest"/>
+                <apex:column value="{!B.Traveller__r.Hand__c}" headerValue="Hand"/>
+                <apex:column value="{!B.Traveller__r.Height__c}" headerValue="Height"/>
+                <apex:column value="{!B.Traveller__r.MobilePhone}" headerValue="Mobile"/>
+                <apex:column value="{!B.Traveller__r.Emergency_Contact__c}" headerValue="Emergency Contact"/>
+                <apex:column value="{!B.Traveller__r.Emergency_Number__c}" headerValue="Emergency Number"/>
+                <apex:column value="{!B.Cancellation__c}" headerValue="Cancelled" style="Checkbox"/>                
+    </apex:dataTable> -->
+    </body>      
+</html>
+</apex:page>

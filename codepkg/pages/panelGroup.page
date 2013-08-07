@@ -1,0 +1,15 @@
+<apex:page >
+    <apex:panelGrid columns="3">
+    <apex:outputText value="Hello"/>
+    <apex:outputText value="Every"/>
+    <apex:outputText value="One"/>
+        <apex:panelGroup >
+     <apex:outputText value="Hello"/>
+    <apex:outputText value="Every"/>
+    <apex:outputText value="One"/>
+        </apex:panelGroup>
+     <apex:outputText value="Hello"/>
+    <apex:outputText value="Every"/>
+    <apex:outputText value="One"/>
+    </apex:panelGrid>
+</apex:page>

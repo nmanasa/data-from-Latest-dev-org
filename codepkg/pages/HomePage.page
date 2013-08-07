@@ -1,0 +1,80 @@
+<apex:page standardStylesheets="false" controller="HomePageController"> 
+<apex:includeScript value="/support/console/22.0/integration.js"/>
+<html>
+<script>
+	function openSearchPage()
+	{
+            var primaryTabName = 'SearchTab';
+            sforce.console.openPrimaryTab(null, '/apex/HomeSearchPage', true, '', '', 'SearchTab');
+    }
+</script>
+<style>
+	.container{
+			overflow:auto;
+			height:100px;
+		}
+		
+</style>
+	<apex:form >  
+	<table>
+		<tr>
+			<td>
+				<apex:pageBlock >
+					<apex:pageBlocksection title="Usefull Links" >
+						<a href = "http://www.google.com" target = "_blank">GOOGLE</a><br/>
+						<a href = "http://www.facebook.com" target = "_blank">FACEBOOK</a>
+					</apex:pageBlocksection>
+				</apex:pageBlock>
+			</td>
+		<td>
+		  	<apex:image url="{!$Resource.UniversityLogo}" width="400" height="150" style="text-align: center;margin-top:60px;margin-left:400px;" />
+		  	<br/>
+			<apex:commandButton value="Search Account" style="margin-left:440px;margin-top:20px;" onclick="openSearchPage();return false;"/>
+			<apex:commandButton value="Get Case" style="margin-left:30px;margin-top:20px;" />
+			</td> 
+		</tr>
+		</table>
+		<table>
+		<tr>
+		<td>
+		<table>
+		<tr >
+		<td>
+		 	<apex:pageBlock rendered="{!profileValue}" >
+				<apex:pageBlockSection title="Admin Section">
+					<apex:inputTextArea label="Eneter the Notifications to be displayed" value="{!message}"/>
+					<apex:commandButton value="Add" action="{!messageAdd}" rerender="PBS"/>
+				</apex:pageBlockSection>
+			</apex:pageBlock> 
+		</td>
+		</tr>
+		</table>	
+		</td>
+		<td>
+		<table style = "margin-left:300px;width:500px">
+		<!-- 	
+					<apex:pageBlockTable value="{!TableDisplay}" var="ml" id="PBTable">  
+						<apex:column value="{!ml.MessageText__c}"/> 
+					</apex:pageBlockTable>
+			</apex:outputPanel>	  -->
+			<tr>
+			<td >
+				<apex:pageBlock id="PBS" >
+					<apex:outputPanel layout="block" styleclass="container">
+					<apex:pageBlocksection title="">
+					
+						<apex:pageBlockTable value="{!TableDisplay}" var="ml" styleclass="overfolw:scroll">  
+							<apex:column value="{!ml.MessageText__c}"/> 
+						</apex:pageBlockTable>
+					</apex:pageBlocksection>
+				</apex:outputPanel>	
+				</apex:pageBlock>
+				</td>
+			</tr>
+		</table>
+		</td></tr>
+		</table>		
+	</apex:form>
+	
+	</html>
+</apex:page>

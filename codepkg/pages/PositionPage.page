@@ -1,0 +1,17 @@
+<apex:page standardController="Position__c" extensions="positionClass">
+	<apex:form >
+		<apex:pageBlock >
+			<apex:pageBlockTable value="{!positionList}" var="plist">
+				<apex:column value="{!plist.name}"/>
+				<apex:column value="{!plist.Job_Description__c}"/>
+				<apex:column >
+					<apex:inputField value="{!plist.Job_Status__c}"/>
+				</apex:column>
+				<apex:column >
+					<apex:inputField value="{!plist.Location__c}"/>
+				</apex:column>
+			</apex:pageBlockTable>
+			<apex:commandButton value="Save" action="{!SaveRecord}"/>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

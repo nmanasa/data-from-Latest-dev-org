@@ -1,0 +1,24 @@
+<apex:page controller="accountAttachment">
+	<apex:form >
+		<apex:pageBlock >
+			<apex:pageMessages />
+			<apex:actionFunction name="pickedValue" action="{!displayFunc}"/>
+			<apex:pageBlockSection >
+				<apex:inputText label="LastName" value="{!accName}"/>
+				<apex:inputText label="Email" value="{!email}"/>
+			<!-- 	<apex:inputFile value="{!attachment}" FileName="{!fileName}"/>  -->	
+				<apex:selectList size="1" value="{!selectValue}" onChange="pickedValue()" >
+					<apex:selectOption itemLabel="None" itemValue="None"/>
+					<apex:selectOptions value="{!pickListValues}"/>
+				</apex:selectList>
+			</apex:pageBlockSection>
+			<apex:pageBlockSection title="Selected values"  rendered="{!if(selectValue != '',true,false)}">
+				<apex:repeat value="{!attList}" var="att">
+					<apex:inputFile value="{!att.body}" filename="{!att.name}"/>
+				</apex:repeat>
+			</apex:pageBlockSection>
+			<apex:commandButton value="upload" action="{!uploadFunc}"/>
+			
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

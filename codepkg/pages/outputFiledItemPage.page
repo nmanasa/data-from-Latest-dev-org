@@ -1,0 +1,14 @@
+<apex:page standardController="Items__c" >
+    <apex:form >
+        <apex:pageBlock mode="inlineedit">
+            <apex:pageBlockSection title="Items Information">
+                <apex:outputField value="{!Items__c.name}"/>
+                <apex:outputField value="{!Items__c.Number_of_items__c}"/>
+                <apex:outputField value="{!Items__c.Cost_of_the_Item__c}"/>
+                <apex:outputField value="{!Items__c.Order__c}"/>
+                <apex:commandButton value="Save" action="{!Save}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>
